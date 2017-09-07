@@ -48,9 +48,9 @@ class ContactFormController extends BaseController
 		// Set the message body
 		$postedMessage = craft()->request->getPost('message');
 
-    // Add name and email to the beginning of the message body
-    $postedMessage = array('Email' => craft()->request->getPost('fromEmail')) + $postedMessage;
-    $postedMessage = array('Name' => craft()->request->getPost('fromName')) + $postedMessage;
+		// Add name and email to the beginning of the message body
+		$postedMessage = array('Email' => craft()->request->getPost('fromEmail')) + $postedMessage;
+		$postedMessage = array('Name' => craft()->request->getPost('fromName')) + $postedMessage;
 
 		// Before compile event
 		Craft::import('plugins.contactform.events.ContactFormMessageEvent');
