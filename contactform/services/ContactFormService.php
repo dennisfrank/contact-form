@@ -31,7 +31,8 @@ class ContactFormService extends BaseApplicationComponent
 			$email = new EmailModel();
 			$emailSettings = craft()->email->getSettings();
 
-			$email->fromEmail = $emailSettings['emailAddress'];
+			// $email->fromEmail = $emailSettings['emailAddress'];
+			$email->fromEmail = $message->fromEmail;
 			$email->replyTo   = $message->fromEmail;
 			$email->sender    = $emailSettings['emailAddress'];
 			$email->fromName  = $settings->prependSender . ($settings->prependSender && $message->fromName ? ' ' : '') . $message->fromName;
